@@ -3,14 +3,12 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        // массив w: нечётные числа от 1 до 23
         short[] w = new short[12];
         for (int i = 0; i < 12; i++) {
             w[i] = (short)(2 * i + 1);
         }
 
 
-        // массив x: 16 случайных чисел от -4.0 до 12.0
         double[] x = new double[16];
         Random rnd = new Random();
         for (int j = 0; j < 16; j++) {
@@ -18,7 +16,6 @@ public class Main {
         }
 
 
-        // двумерный массив s размером 12x16
         double[][] s = new double[12][16];
 
 
@@ -35,10 +32,10 @@ public class Main {
                         if (denominator != 0) {
                             s[i][j] = Math.pow(logVal, 0.5 / denominator);
                         } else {
-                            s[i][j] = Double.NaN; // при делении на ноль
+                            s[i][j] = Double.NaN;
                         }
                     } else {
-                        s[i][j] = Double.NaN; // логарифм не определен
+                        s[i][j] = Double.NaN;
                     }
                 }
 
@@ -48,7 +45,7 @@ public class Main {
                     if (tanVal != 0) {
                         s[i][j] = (1.0 / 3.0) * (0.5 - Math.pow(0.5 / tanVal, 2));
                     } else {
-                        s[i][j] = Double.NaN; // при делении на ноль
+                        s[i][j] = Double.NaN;
                     }
                 }
 
@@ -59,7 +56,7 @@ public class Main {
                         double b = Math.pow(2.0 / Math.cos(val), Math.pow((val + 2.0 / 3.0) / val, 2));
                         s[i][j] = Math.cbrt(Math.pow(a, b));
                     } else {
-                        s[i][j] = Double.NaN; // при делении на ноль
+                        s[i][j] = Double.NaN;
                     }
                 }
             }
