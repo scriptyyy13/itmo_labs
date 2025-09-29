@@ -65,7 +65,7 @@ public class Main {
 
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 16; j++) {
-                System.out.printf("%10.4f ", s[i][j]);
+                System.out.printf("%6.3f ", s[i][j]);
             }
 
             System.out.println();
