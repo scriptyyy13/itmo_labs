@@ -21,5 +21,11 @@ public abstract class Artist extends Person implements Performer {
         doAct();
     }
 
+    @Override
+    public String toString() {
+        return "Artist{name='" + getName() + "', mood=" + getMood() +
+                ", actName='" + actName + "', profession='" + profession + "'}";
+    }
+
     protected abstract void doAct();
 }
