@@ -14,7 +14,7 @@ public class Main {
         // окружение
         Light light = new Light(80);
         City city = new City("Солнечный город", light);
-        Car car = new Car("Кнопочный автомобиль");
+        Car car = new Car("Кнопочный");
 
         // концерт
         Concert concert = new Concert(light);
