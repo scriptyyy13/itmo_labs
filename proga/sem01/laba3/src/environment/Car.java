@@ -9,11 +9,11 @@ public class Car {
     }
 
     public void drive(Location destination) {
-        System.out.println("Кнопочный автомобиль мчится к месту: " + destination.name());
+        System.out.println("Машина " + type + " мчится к месту: " + destination.name());
     }
 
     @Override
     public String toString() {
-        return "Car{type='" + type + "'}";
+        return "Car{type='"  + type + "'}";
     }
 }
