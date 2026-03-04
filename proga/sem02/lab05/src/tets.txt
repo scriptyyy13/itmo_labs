@@ -1,0 +1,84 @@
+# --- Проверка help ---
+help
+# Должен вывести полный список всех команд
+
+# --- Добавляем первый город ---
+add
+# Ввод:
+# name: Gotham
+# coordinates.x: 100.0
+# coordinates.y: 50
+# area: 500
+# population: 1000000
+# metersAboveSeaLevel: 15
+# agglomeration: 2000000
+# government: DICTATORSHIP
+# governor: Bruce, 180
+# Должно вывести: элемент добавлен
+
+# --- Добавляем второй город ---
+add
+# name: Metropolis
+# coordinates.x: 120.5
+# coordinates.y: 80
+# area: 600
+# population: 1500000
+# metersAboveSeaLevel: 30
+# agglomeration: 2500000
+# government: GERONTOCRACY
+# governor: Clark, 185
+
+# --- Показать все города ---
+show
+# Должно вывести Gotham и Metropolis с их id, population, government
+
+# --- Информация о коллекции ---
+info
+# Должно показать: тип коллекции, дата инициализации, размер = 2
+
+# --- Проверка фильтрации ---
+filter_by_government DICTATORSHIP
+# Должно вывести только Gotham
+filter_contains_name trop
+# Должно вывести Metropolis
+
+# --- Проверка count_greater_than_governor ---
+count_greater_than_governor Clark
+# Должно показать количество городов с governor > Clark (по height, например 0 или 1)
+
+# --- Проверка update ---
+update
+# Ввод id: id Gotham
+# Новые поля: name: Gotham City, population: 1200000
+# show → Gotham City должен быть обновлён
+
+# --- Проверка remove_by_id ---
+remove_by_id
+# Ввод id: id Metropolis
+# show → Metropolis исчезает
+
+# --- Проверка remove_first ---
+remove_first
+# show → удаляется первый элемент (Gotham City)
+
+# --- Проверка add_if_max ---
+add_if_max
+# Попытка добавить город с population 500000 → не добавится
+# Попытка добавить город с population 2000000 → добавится
+
+# --- Проверка add_if_min ---
+add_if_min
+# Попытка добавить город с population 100000 → добавится, если меньше текущих
+
+# --- Проверка очистки коллекции ---
+clear
+# show → коллекция пустая
+
+# --- Проверка сохранения ---
+add
+# Добавляем любой город снова
+save
+# Файл CSV должен обновиться
+
+# --- Завершение программы ---
+exit
